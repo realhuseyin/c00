@@ -1,0 +1,17 @@
+#include <unistd.h>
+
+void	ft_print_reverse_alphabet(void){
+		
+		char bir;
+
+
+		/*z den başlayarak a harfine kadar ters yaz */
+		bir = 'z';
+		while(bir >='a'){
+			write(1,&bir,1);
+			bir--;
+		}
+}
+int main(){
+	ft_print_reverse_alphabet();	
+}
