@@ -1,0 +1,61 @@
+#include <unistd.h>
+#include <stdbool.h>
+
+void	ft_putchar (char b)
+{
+	write (1, &b, 1);
+}
+/*
+ bool true false deger döngüsü için kullanıldı
+ */
+void	ft_write_comb(int a, int b, bool sayi)
+{
+	ft_putchar(48 + a / 10);/*sonucu 4 */
+	ft_putchar(48 + a % 10);/*sonucu 8 */
+	ft_putchar(' ');
+	ft_putchar(48 + b / 10);
+	ft_putchar(48 + b % 10);
+	if (sayi)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
+}
+
+void	ft_print_comb2(void)
+{
+	int	a;
+	int	b;
+	bool sayi;
+	/*
+	 a b ve sayi degişkenlerinin başlangıç degerleri 0
+	 */
+
+	/*
+	 a 0 dan başlayarak 99 dahil olana kadar
+	 */
+	a = 0;
+	while(a <= 99)
+	{
+		/*
+		 b nin degerini a nın degerine 1 koyarak
+		 */
+		b = a + 1;
+		while (b <= 99)
+		{
+			/*
+			 ! işareti iki deger birbirinden farklıysa sonucu 1 çıkarır
+			 */
+			sayi = !(a == 98 && b == 99);
+			ft_write_comb(a, b, sayi);
+			b++;
+			/*
+			b ve a arttır
+			*/
+		}
+		a++;
+	}
+}
+int main(){
+	ft_print_comb2();
+}
