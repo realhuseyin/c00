@@ -1,0 +1,18 @@
+#include <unistd.h>
+
+void ft_is_negative(){
+	
+	int n;
+	/*n adında degişken tanımladık degeri 0 ve 0 sıfırdan büyükse P eger 0 dan küçükse N yazdır  */	
+	
+	if (n >=0)
+		write (1,&"P",1);
+	else
+		write(1,&"N",1);
+}
+
+int main(){
+	ft_is_negative();
+}
+
+
