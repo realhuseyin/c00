@@ -1,0 +1,51 @@
+#include <unistd.h>
+
+void	ft_print_comb(void){
+	int a;
+	int b;
+	int c;
+	/*Burada üç degişken tanımladık ve üçününde degerleri 0 */
+
+	/*a 0 dan başlayarak 7 dahil yazsın. birinci satır */
+	a= '0';
+	while(a <='7'){
+	
+		/*b nin degeri a nın degerinin üzerine 1 koyarak artsın */
+		b = a +1;
+		/*b 8 dahil olana kadar yazsın */
+		while(b <='8'){
+		
+			/*c nin degeri b nin degerinin üzerine 1 koyarak artsın */
+			c = b  +1;
+			/*c 9 dahil olana kadar yazsın */
+			while(c <='9'){
+
+				write (1,&a,1);
+				write (1,&b,1);
+				write (1,&c,1);
+
+
+				/*a nın degeri 7 eşit degilse komutu yazdır */
+				if(a !='7')
+					write (1, ",",2);
+
+				/* a b ve c degerlerini arttır*/
+				c++;				
+			}
+			b++;
+
+		}
+		a++;	
+	}
+
+}
+int main(){
+	ft_print_comb();
+	return 0;
+}
+
+
+
+
+
+ 
